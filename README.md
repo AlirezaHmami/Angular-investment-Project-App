@@ -1,3 +1,6 @@
+##App version 1.3.0
+changres log : * App migrated to Angular Signals*
+
 # EssentialsPractice
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.

@@ -1,5 +1,5 @@
 <app-header></app-header>
 <main class="container mx-auto">
     <app-user-inputs (inputsChanged)="investmentData" (onSubmit)="onSubmitHandler($event)"></app-user-inputs>
-    <app-investment-table [investmentData]="investmentResults"></app-investment-table>
+    <app-investment-table [investmentData]="investmentResults()"></app-investment-table>
 </main>

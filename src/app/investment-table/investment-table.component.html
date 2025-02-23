@@ -1,4 +1,4 @@
-@if (!investmentData) {
+@if (!investmentData()) {
 <p class="text-white font-semibold text-lg mb-4 text-center">
   please enter some values and press "Calculate".
 </p>
@@ -36,7 +36,7 @@
     </tr>
   </thead>
   <tbody>
-    @for (investment of investmentData; track investment.year) {
+    @for (investment of investmentData(); track investment.year) {
     <tr
       class="hover:bg-main-lighten transition-colors border-main"
       [ngClass]="{
