@@ -1,0 +1,77 @@
+@if (!investmentData) {
+<p class="text-white font-semibold text-lg mb-4 text-center">
+  please enter some values and press "Calculate".
+</p>
+}@else {
+<table
+  class="min-w-full bg-main-lighten border border-main-lighter shadow-lg rounded-lg overflow-hidden"
+>
+  <thead>
+    <tr class="bg-gray-100">
+      <th
+        class="px-6 py-3 text-left text-sm font-semibold text-main-darker uppercase tracking-wider border-b"
+      >
+        Year
+      </th>
+      <th
+        class="px-6 py-3 text-left text-sm font-semibold text-main-darker uppercase tracking-wider border-b"
+      >
+        Investment Value
+      </th>
+      <th
+        class="px-6 py-3 text-left text-sm font-semibold text-main-darker uppercase tracking-wider border-b"
+      >
+        Interest (Year)
+      </th>
+      <th
+        class="px-6 py-3 text-left text-sm font-semibold text-main-darker uppercase tracking-wider border-b"
+      >
+        Total Interest
+      </th>
+      <th
+        class="px-6 py-3 text-left text-sm font-semibold text-main-darker uppercase tracking-wider border-b"
+      >
+        Invested Capital
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (investment of investmentData; track investment.year) {
+    <tr
+      class="hover:bg-main-lighten transition-colors border-main"
+      [ngClass]="{
+        'bg-main-light': investment.year % 2 === 0,
+        'bg-main-lighter': investment.year % 2 === 1
+      }"
+    >
+      <td
+        class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
+      >
+        Year {{ investment.year }}
+      </td>
+      <td
+        class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
+      >
+        {{ investment.valueEndOfYear | currency }}
+      </td>
+      <td
+        class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
+      >
+        {{ investment.interest | currency }}
+      </td>
+      <td
+        class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
+      >
+        {{ investment.totalInterest | currency }}
+      </td>
+      <td
+        class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
+      >
+        {{ investment.totalAmountInvested | currency }}
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
+<!-- <tr *ngFor="let row of data; let i = index" [ngClass]="{'bg-white': i % 2 === 0, 'bg-red-50': i % 2 === 1}" class="hover:bg-main-lighter transition-colors"> -->

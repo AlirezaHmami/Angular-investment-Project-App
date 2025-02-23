@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+@import "tailwindcss";
+* {
+  box-sizing: border-box;
+}
+
+@theme{
+  --color-main: #394b44;
+  --color-main-light: #4d635a;
+  --color-main-lighter: #627d72;
+  --color-main-lighten: #7a9b8e;
+  --color-main-dark: #2c3935;
+  --color-main-darker: #1f2725;
+  --color-main-alpha: rgba(57, 75, 68, 0.8);
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(#303b37, #1a1f1d);
+  color: #e1eeeb;
+  min-height: 100vh;
+}
+
+.center {
+  text-align: center;
+}
+
+/* var #394b44 color as main color hint: use as --var */
+

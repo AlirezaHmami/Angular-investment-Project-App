@@ -1,0 +1,71 @@
+<form (ngSubmit)="onSubmitHandler()" class="p-4 bg-main-lighten rounded-lg shadow-md mb-8">
+
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <p class="flex flex-col">
+      <label
+        for="initial-investment"
+        class="mb-2 text-base font-semibold text-main-darker"
+        >Initial investment</label
+      >
+      <input
+        type="number"
+        id="initial-investment"
+        name="initial-investment"
+        [(ngModel)]="enteredInitialInvestment"
+        class="px-3 py-2 text-base font-semibold border border-main-dark rounded-md focus:outline-none focus:ring-2 focus:ring-main-darker"
+      />
+    </p>
+    <p class="flex flex-col">
+      <label
+        for="annual-investment"
+        class="mb-2 text-base font-semibold text-main-darker"
+        >Annual investment</label
+      >
+      <input
+        type="number"
+        id="annual-investment"
+        name="annual-investment"
+        [(ngModel)]="enteredAnnualInvestment"
+        class="px-3 py-2 text-base font-semibold border border-main-dark rounded-md focus:outline-none focus:ring-2 focus:ring-main-darker"
+      />
+    </p>
+  </div>
+  <div class="grid grid-cols-2 gap-4 mb-4">
+    <p class="flex flex-col">
+      <label
+        for="expected-return"
+        class="mb-2 text-base font-semibold text-main-darker"
+        >Expected return</label
+      >
+      <input
+        type="number"
+        id="expected-return"
+        name="expected-return"
+        [(ngModel)]="enteredExpectedReturn"
+        class="px-3 py-2 text-base font-semibold border border-main-dark rounded-md focus:outline-none focus:ring-2 focus:ring-main-darker"
+      />
+    </p>
+    <p class="flex flex-col">
+      <label
+        for="duration"
+        class="mb-2 text-base font-semibold text-main-darker"
+        >Duration</label
+      >
+      <input
+        type="number"
+        id="duration"
+        name="duration"
+        [(ngModel)]="enteredDuration"
+        class="px-3 py-2 text-base font-semibold border border-main-dark rounded-md focus:outline-none focus:ring-2 focus:ring-main-darker"
+      />
+    </p>
+  </div>
+  <p class="text-center">
+    <button
+      type="submit"
+      class="cursor-pointer px-6 py-2 text-base font-semibold text-white bg-main-dark rounded-md hover:bg-main-darker focus:outline-none focus:ring-2 focus:ring-main-darker"
+    >
+      Calculate
+    </button>
+  </p>
+</form>
