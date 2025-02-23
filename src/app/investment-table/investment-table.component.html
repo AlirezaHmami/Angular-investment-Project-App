@@ -1,8 +1,8 @@
-@if (!investmentData()) {
+@if (!investmentData) {
 <p class="text-white font-semibold text-lg mb-4 text-center">
   please enter some values and press "Calculate".
 </p>
-}@else {
+} @else {
 <table
   class="min-w-full bg-main-lighten border border-main-lighter shadow-lg rounded-lg overflow-hidden"
 >
@@ -36,7 +36,7 @@
     </tr>
   </thead>
   <tbody>
-    @for (investment of investmentData(); track investment.year) {
+    @for (investment of investmentData; track investment.year) {
     <tr
       class="hover:bg-main-lighten transition-colors border-main"
       [ngClass]="{
@@ -52,26 +52,25 @@
       <td
         class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
       >
-        {{ investment.valueEndOfYear | currency }}
+        {{ investment.valueEndOfYear | currency : "USD" }}
       </td>
       <td
         class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
       >
-        {{ investment.interest | currency }}
+        {{ investment.interest | currency : "USD" }}
       </td>
       <td
         class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
       >
-        {{ investment.totalInterest | currency }}
+        {{ investment.totalInterest | currency : "USD" }}
       </td>
       <td
         class="px-6 py-4 text-sm border-main text-main-darker font-semibold border-b"
       >
-        {{ investment.totalAmountInvested | currency }}
+        {{ investment.totalAmountInvested | currency : "USD" }}
       </td>
     </tr>
     }
   </tbody>
 </table>
 }
-<!-- <tr *ngFor="let row of data; let i = index" [ngClass]="{'bg-white': i % 2 === 0, 'bg-red-50': i % 2 === 1}" class="hover:bg-main-lighter transition-colors"> -->

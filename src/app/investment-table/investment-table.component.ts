@@ -1,14 +1,15 @@
-import { Component, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { InvestmentResults } from '../app.mode';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-investment-table',
   standalone: true,
-  imports: [CommonModule, CurrencyPipe],
+  imports: [CommonModule],
   templateUrl: './investment-table.component.html',
-  styleUrl: './investment-table.component.css',
+  styleUrls: ['./investment-table.component.css'],
 })
 export class InvestmentTableComponent {
-  readonly investmentData = input.required<InvestmentResults[] | undefined>();
+  @Input() investmentData: InvestmentResults[] | undefined;
+
 }
