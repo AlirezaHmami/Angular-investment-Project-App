@@ -1,4 +1,4 @@
-##App version 1.3.0
+#App version 1.5.0
 changres log : * App migrated to Angular Signals*
 
 # EssentialsPractice
