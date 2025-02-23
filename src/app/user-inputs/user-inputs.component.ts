@@ -25,8 +25,10 @@ export class UserInputsComponent {
       expectedReturn: this.enteredExpectedReturn(),
       duration: this.enteredDuration(),
     };
-
     this.onSubmit.emit(investmentData);
-
+    this.enteredInitialInvestment.set(0)
+    this.enteredAnnualInvestment.set(0)
+    this.enteredExpectedReturn.set(5);
+    this.enteredDuration.set(10);
   }
 }
